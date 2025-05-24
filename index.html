@@ -2,79 +2,138 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Youtube 666</title>
+  <title>YouTube</title>
   <style>
-    @keyframes flicker {
-      0% { opacity: 1; }
-      50% { opacity: 0.4; }
-      100% { opacity: 1; }
-    }
-
     body {
       background-color: black;
-      color: red;
-      font-family: 'Courier New', monospace;
-      text-align: center;
-      padding: 20px;
-      animation: flicker 2s infinite;
+      color: white;
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
     }
 
-    h1 {
-      font-size: 3em;
-      text-shadow: 0 0 10px red, 0 0 20px crimson;
-      animation: flicker 1s infinite;
-    }
-
-    .section {
-      margin-top: 40px;
-    }
-
-    .video, .ad {
-      border: 2px solid crimson;
+    header {
+      background: #111;
       padding: 10px;
-      margin: 20px auto;
-      width: fit-content;
-      background-color: #111;
-      box-shadow: 0 0 10px red;
-    }
-
-    iframe {
-      width: 100%;
-      max-width: 560px;
-      height: 315px;
-    }
-
-    h2 {
-      text-shadow: 0 0 8px crimson;
-    }
-
-    .glitch {
-      font-size: 1.2em;
+      text-align: center;
       color: red;
-      animation: flicker 3s infinite;
+      font-size: 2em;
+      text-shadow: 0 0 10px red;
+    }
+
+    .video-container {
+      display: flex;
+      flex-direction: row;
+      padding: 20px;
+    }
+
+    .main-video {
+      flex: 3;
+      position: relative;
+    }
+
+    .main-video iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+    }
+
+    .ad-popup {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      width: 300px;
+      height: 170px;
+      border: 2px solid red;
+      box-shadow: 0 0 20px red;
+      background: black;
+      display: none;
+      z-index: 10;
+    }
+
+    .ad-popup iframe {
+      width: 100%;
+      height: 100%;
+    }
+
+    .sidebar {
+      flex: 1;
+      padding-left: 20px;
+    }
+
+    .rec-video {
+      margin-bottom: 20px;
+      background: #111;
+      padding: 10px;
+      border-left: 3px solid crimson;
+      box-shadow: 0 0 8px red;
+    }
+
+    .rec-video iframe {
+      width: 100%;
+      height: 150px;
+      border: none;
+    }
+
+    .rec-video p {
+      margin: 5px 0 0;
+      color: crimson;
     }
   </style>
 </head>
 <body>
-  <h1>Welcome to YouTube 666</h1>
-  <p class="glitch">You shouldn't have come here.</p>
+  <header>Now Watching</header>
 
-  <div class="section">
-    <h2>Recommended for You</h2>
-    <div class="video"><iframe src="https://www.youtube.com/embed/i29t-5tEp_o" allowfullscreen></iframe></div>
-    <div class="video"><iframe src="https://www.youtube.com/embed/uqcyDA2L5L0" allowfullscreen></iframe></div>
-    <div class="video"><iframe src="https://www.youtube.com/embed/XpdUkZbUbbo" allowfullscreen></iframe></div>
-    <div class="video"><iframe src="https://www.youtube.com/embed/BvBhWMZQg6g" allowfullscreen></iframe></div>
-    <div class="video"><iframe src="https://www.youtube.com/embed/018f1iLqRbQ" allowfullscreen></iframe></div>
+  <div class="video-container">
+    <div class="main-video">
+      <iframe id="main" src="https://www.youtube.com/embed/i29t-5tEp_o?autoplay=1" allowfullscreen></iframe>
+
+      <!-- Ad Popup 1 -->
+      <div class="ad-popup" id="ad1">
+        <iframe src="https://www.youtube.com/embed/87NHueHBHwY?autoplay=1&mute=1" allowfullscreen></iframe>
+      </div>
+      <!-- Ad Popup 2 -->
+      <div class="ad-popup" id="ad2" style="top: 220px; right: 60px;">
+        <iframe src="https://www.youtube.com/embed/zMzia7sJtVM?autoplay=1&mute=1" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <h3>Recommended</h3>
+
+      <!-- Fake 666Account video -->
+      <div class="rec-video">
+        <iframe src="https://www.youtube.com/embed/uqcyDA2L5L0" allowfullscreen></iframe>
+        <p>Username:666 - @666Account</p>
+      </div>
+
+      <div class="rec-video">
+        <iframe src="https://www.youtube.com/embed/XpdUkZbUbbo" allowfullscreen></iframe>
+        <p>Related content</p>
+      </div>
+
+      <div class="rec-video">
+        <iframe src="https://www.youtube.com/embed/BvBhWMZQg6g" allowfullscreen></iframe>
+        <p>Unknown Source</p>
+      </div>
+
+      <div class="rec-video">
+        <iframe src="https://www.youtube.com/embed/018f1iLqRbQ" allowfullscreen></iframe>
+        <p>Suggested for You</p>
+      </div>
+    </div>
   </div>
 
-  <div class="section">
-    <h2>Cursed Ads</h2>
-    <div class="ad"><iframe src="https://www.youtube.com/embed/87NHueHBHwY" allowfullscreen></iframe></div>
-    <div class="ad"><iframe src="https://www.youtube.com/embed/zMzia7sJtVM" allowfullscreen></iframe></div>
-    <div class="ad"><iframe src="https://www.youtube.com/embed/XwdUXS94yNk" allowfullscreen></iframe></div>
-    <div class="ad"><iframe src="https://www.youtube.com/embed/erh2ngRZxs0" allowfullscreen></iframe></div>
-    <div class="ad"><iframe src="https://www.youtube.com/embed/mf7bfM9b34Y" allowfullscreen></iframe></div>
-  </div>
+  <script>
+    // Show ad1 after 5 seconds
+    setTimeout(() => {
+      document.getElementById("ad1").style.display = "block";
+    }, 5000);
+
+    // Show ad2 after 12 seconds
+    setTimeout(() => {
+      document.getElementById("ad2").style.display = "block";
+    }, 12000);
+  </script>
 </body>
 </html>
